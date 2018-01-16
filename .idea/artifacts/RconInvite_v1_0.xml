@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="RconInvite-v1.0">
+    <output-path>$PROJECT_DIR$/out/artifacts/RconInvite-v1.0</output-path>
+    <root id="archive" name="RconInvite-v1.0.jar">
+      <element id="module-output" name="RconInvite" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../JDA/JDA-3.5.0_327-withDependencies.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../MoreColors/out/artifacts/MoreColors-1.0/MoreColors-1.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../Library/gson-2.8.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../Library/rkon-core-1.1.2.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
