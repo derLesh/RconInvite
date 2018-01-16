@@ -9,8 +9,7 @@ Add and remove users to your Minecraft whitelist from your discord server
 3. **Start your bot** - The Bot is ready to use. Launch it and try it yourself. Use `/addme <MC-User>` to add an user to the whitelist and `remove <MC-User>` to remove an user from the whitelist
 
 # Librarys
-[JDA-3.5](https://github.com/DV8FromTheWorld/JDA)
-[gson-2.8.2](https://github.com/google/gson)
-[rkon-1.1.2](https://github.com/Kronos666/rkon-core)
-[MoreColors-1.0](https://github.com/LeshDev/MoreColors)
-
+[JDA-3.5](https://github.com/DV8FromTheWorld/JDA) 
+[gson-2.8.2](https://github.com/google/gson) 
+[rkon-1.1.2](https://github.com/Kronos666/rkon-core) 
+[MoreColors-1.0](https://github.com/LeshDev/MoreColors) 
