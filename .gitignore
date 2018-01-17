@@ -1,4 +1,6 @@
-.idea/
+.idea
 RconInvite.iml
 out/
 META-INF
+workspace.xml
+
