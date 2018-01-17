@@ -1,6 +1,6 @@
 {
-  "hostIp": "",
-  "rconPw": "",
-  "rconPort": 0,
-  "token": ""
+  "hostIp": "localhost",
+  "rconPw": "test",
+  "rconPort": 25575,
+  "token": "NDAyOTA3MDk1ODEwMzEwMTUy.DUDY3w.NjAcBh02dJ646Slae--bzBLDhK0"
 }

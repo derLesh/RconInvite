@@ -1,4 +1,4 @@
-package me.lesh.utils;
+package me.lesh.rconinvite.utils;
 
 public class ConfigSetup {
 

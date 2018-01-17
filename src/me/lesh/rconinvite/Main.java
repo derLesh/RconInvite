@@ -1,14 +1,14 @@
-package me.lesh;
+package me.lesh.rconinvite;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import me.lesh.commands.Invite;
-import me.lesh.utils.ConfigSetup;
+import me.lesh.rconinvite.utils.ConfigSetup;
 import net.dv8tion.jda.core.AccountType;
 import net.dv8tion.jda.core.JDA;
 import net.dv8tion.jda.core.JDABuilder;
 import net.dv8tion.jda.core.entities.Game;
 import net.dv8tion.jda.core.utils.JDALogger;
+import me.lesh.rconinvite.commands.*;
 import org.slf4j.Logger;
 
 import java.io.*;
@@ -23,6 +23,7 @@ public class Main {
     public static JDABuilder jdaB = new JDABuilder(AccountType.BOT);
     public static final Gson GSON = new GsonBuilder().setPrettyPrinting().serializeNulls().create();
     public static String fileName = "config.json";
+
     public static ConfigSetup CONFIG = new ConfigSetup();
     public static Logger LOG = JDALogger.getLog("RconInvite");
 
@@ -32,7 +33,8 @@ public class Main {
         try { jda = jdaB.setToken(CONFIG.getToken()).setGame(Game.listening("/addme <MC-Name>")).buildBlocking(); }
         catch(Exception e){ LOG.warn("There was an error during launching - " + e); }
 
-        jda.addEventListener(new Invite());
+        jda.addEventListener(new Invite() {
+        });
 
         LOG.info("Ready to use ... Have fun");
     }
