@@ -5,3 +5,5 @@ META-INF
 workspace.xml
 config.json
 
+config.json
+*.json
