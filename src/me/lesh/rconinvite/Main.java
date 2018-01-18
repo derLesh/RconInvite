@@ -3,11 +3,13 @@ package me.lesh.rconinvite;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import me.lesh.rconinvite.utils.ConfigSetup;
+import me.lesh.rconinvite.utils.UserJson;
 import net.dv8tion.jda.core.AccountType;
 import net.dv8tion.jda.core.JDA;
 import net.dv8tion.jda.core.JDABuilder;
 import net.dv8tion.jda.core.entities.Game;
 import net.dv8tion.jda.core.utils.JDALogger;
+import me.lesh.rconinvite.Controller.UserGenerator;
 import me.lesh.rconinvite.commands.*;
 import org.slf4j.Logger;
 
@@ -41,6 +43,18 @@ public class Main {
     }
 
     public static void setup(){
+    	
+        //userlist.json
+    	try {
+    		File file = new File(UserGenerator.fileName);
+    		if(!file.exists()) {
+    			file.createNewFile();
+    		}
+    	}catch (Exception e) {
+    		e.printStackTrace();
+    	}
+    	
+    	//config.json
         try{
             File file = new File(fileName);
             if(!file.exists()){
@@ -51,9 +65,11 @@ public class Main {
                     LOG.info("Succesful created CONFIG file");
                     System.exit(0);
                 } else {
+                	//????
                     LOG.error("There is no prefix. Set your prefix for your commands");
                     return;
                 }
+                //??
                 LOG.info("Config has been loaded ... ");
             }else {
                 BufferedReader reader = new BufferedReader(new FileReader(file));
