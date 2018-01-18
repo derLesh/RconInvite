@@ -43,7 +43,7 @@ public class Whitelist extends ListenerAdapter{
             catch (AuthenticationException e1) { e1.printStackTrace(); }
             try { rcon.command("whitelist add " + split[1]);
                 rcon.command("whitelist reload");
-                rcon.command("tellraw @p [\"\",{\"text\":\"[Discord] \",\"color\":\"dark_purple\",\"bold\":true},{\"text\":\" "+ addedUser +" \",\"color\":\"white\",\"bold\":false},{\"text\":\" wurde der Whitelist hinzugefÃ¼gt!\",\"color\":\"green\",\"bold\":false}]");
+                rcon.command("tellraw @p [\"\",{\"text\":\"[Discord] \",\"color\":\"dark_purple\",\"bold\":true},{\"text\":\" "+ addedUser +" \",\"color\":\"white\",\"bold\":false},{\"text\":\" wurde der Whitelist hinzugefügt!\",\"color\":\"green\",\"bold\":false}]");
             } catch(IOException e1){
                 e1.printStackTrace();
             }
@@ -70,7 +70,7 @@ public class Whitelist extends ListenerAdapter{
 
 
             //Logging Don't know if thats applicable ¯\_(.-.)_/¯ I guess either remove by minecraftName or discordName+id
-            UserGenerator.removeUser(e.getMessage().getMember().getEffectiveName(), e.getMessage().getAuthor().getId(), split[1], false);
+            UserGenerator.removeUser(e.getMessage().getMember().getEffectiveName(), e.getMessage().getAuthor().getId(), split[1], true);
             //END
             
             
