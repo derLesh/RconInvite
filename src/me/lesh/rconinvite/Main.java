@@ -44,6 +44,7 @@ public class Main {
 
     public static void setup(){
     	
+        //userlist.json
     	try {
     		File file = new File(UserGenerator.fileName);
     		if(!file.exists()) {
@@ -62,7 +63,7 @@ public class Main {
                     writer.write(GSON.toJson(CONFIG));
                     writer.close();
                     LOG.info("Succesful created CONFIG file");
-                    //System.exit(0); userlist.json next.
+                    System.exit(0);
                 } else {
                 	//????
                     LOG.error("There is no prefix. Set your prefix for your commands");
