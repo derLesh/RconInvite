@@ -35,6 +35,7 @@ public class Main {
 
         jda.addEventListener(new Whitelist());
         jda.addEventListener(new Op());
+        jda.addEventListener(new Ban());
 
         LOG.info("Ready to use ... Have fun");
     }
