@@ -13,7 +13,7 @@ import net.kronos.rkon.core.ex.AuthenticationException;
 
 import java.io.IOException;
 
-public class List extends ListenerAdapter{
+public class Op extends ListenerAdapter{
 
     String rconList = null;
 

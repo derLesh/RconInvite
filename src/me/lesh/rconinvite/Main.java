@@ -33,8 +33,8 @@ public class Main {
         try { jda = jdaB.setToken(CONFIG.getToken()).setGame(Game.listening("/addme <MC-Name>")).buildBlocking(); }
         catch(Exception e){ LOG.warn("There was an error during launching - " + e); }
 
-        jda.addEventListener(new Invite());
-        jda.addEventListener(new List());
+        jda.addEventListener(new Whitelist());
+        jda.addEventListener(new Op());
 
         LOG.info("Ready to use ... Have fun");
     }

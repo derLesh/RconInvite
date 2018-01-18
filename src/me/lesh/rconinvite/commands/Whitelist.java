@@ -3,6 +3,7 @@ package me.lesh.rconinvite.commands;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import me.lesh.material.LightGreen;
+import me.lesh.material.Yellow;
 import me.lesh.rconinvite.Main;
 import me.lesh.material.Red;
 import net.dv8tion.jda.core.EmbedBuilder;
@@ -16,10 +17,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
 
-public class Invite extends ListenerAdapter{
+public class Whitelist extends ListenerAdapter{
 
     private String addedUser = null;
     private String removeUser = null;
+    private String rconList = null;
 
     public void onMessageReceived(MessageReceivedEvent e) {
         Message m = e.getMessage();
@@ -31,17 +33,12 @@ public class Invite extends ListenerAdapter{
             try { rcon = new Rcon(Main.CONFIG.getHostIp(), Main.CONFIG.getRconPort(), Main.CONFIG.getRconPw().getBytes()); }
             catch (IOException e1) { e1.printStackTrace(); }
             catch (AuthenticationException e1) { e1.printStackTrace(); }
-            try { rcon.command("whitelist add " + split[1]); rcon.command("whitelist reload"); rcon.command("tellraw @p [\"\",{\"text\":\"[Discord] \",\"color\":\"dark_purple\",\"bold\":true},{\"text\":\" "+ addedUser +" \",\"color\":\"white\",\"bold\":false},{\"text\":\" wurde der Whitelist hinzugefügt!\",\"color\":\"green\",\"bold\":false}]");}
-
-            try (Writer writer = new FileWriter("userlist.json")) {
-                Gson gson = new GsonBuilder().create();
-                gson.toJson(, writer);
+            try { rcon.command("whitelist add " + split[1]);
+                rcon.command("whitelist reload");
+                rcon.command("tellraw @p [\"\",{\"text\":\"[Discord] \",\"color\":\"dark_purple\",\"bold\":true},{\"text\":\" "+ addedUser +" \",\"color\":\"white\",\"bold\":false},{\"text\":\" wurde der Whitelist hinzugefügt!\",\"color\":\"green\",\"bold\":false}]");
+            } catch(IOException e1){
+                e1.printStackTrace();
             }
-
-            catch (IOException e1) { e1.printStackTrace(); }
-
-
-
             // Add user to whitelist
             eB.addField("User " + e.getMessage().getMember().getEffectiveName() + " added " + split[1],"User: " + e.getMessage().getMember().getEffectiveName() + " hat den Minecraft User " + split[1] + " dem Server hinzugefügt",false);
             eB.setColor(LightGreen.lg900);
@@ -61,6 +58,20 @@ public class Invite extends ListenerAdapter{
             // Remove user from whitelist
             eB.addField("User " + e.getMessage().getMember().getEffectiveName() + " removed " + split[1],"User: " + e.getMessage().getMember().getEffectiveName() + " hat den Minecraft User " + split[1] + " dem Server entfernt",false);
             eB.setColor(Red.r700);
+            e.getChannel().sendMessage(eB.build()).queue();
+            return;
+        }
+        if(m.getContentRaw().startsWith("/list")){
+            Rcon rcon = null;
+            try { rcon = new Rcon(Main.CONFIG.getHostIp(), Main.CONFIG.getRconPort(), Main.CONFIG.getRconPw().getBytes()); }
+            catch (IOException e1) { e1.printStackTrace(); }
+            catch (AuthenticationException e1) { e1.printStackTrace(); }
+            try { rconList = rcon.command("whitelist list"); }
+            catch (IOException e1) { e1.printStackTrace(); }
+
+            // Add user to whitelist
+            eB.addField("Whitelist für " + Main.CONFIG.getHostIp(),"Derzeit whitelisted User: \n" + rconList.toString(),false);
+            eB.setColor(Yellow.y600);
             e.getChannel().sendMessage(eB.build()).queue();
             return;
         }
