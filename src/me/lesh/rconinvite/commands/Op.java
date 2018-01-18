@@ -20,12 +20,13 @@ public class Op extends ListenerAdapter{
     public void onMessageReceived(MessageReceivedEvent e) {
         Message m = e.getMessage();
         EmbedBuilder eB = new EmbedBuilder();
-        if(m.getContentRaw().startsWith("/list")){
+        if(m.getContentRaw().startsWith("/op")){
             Rcon rcon = null;
+            String[] split = e.getMessage().getContentRaw().split("\\s+", 1);
             try { rcon = new Rcon(Main.CONFIG.getHostIp(), Main.CONFIG.getRconPort(), Main.CONFIG.getRconPw().getBytes()); }
             catch (IOException e1) { e1.printStackTrace(); }
             catch (AuthenticationException e1) { e1.printStackTrace(); }
-            try { rconList = rcon.command("whitelist list"); }
+            try { rconList = rcon.command("op " + split[1]); }
             catch (IOException e1) { e1.printStackTrace(); }
 
             // Add user to whitelist
