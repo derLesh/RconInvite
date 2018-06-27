@@ -1,6 +1,13 @@
 # RconInvite
 Add and remove users to your Minecraft whitelist from your discord server
 
+![Github All Releases](https://img.shields.io/derLesh/downloads/RconInvite/RconInvite/total.svg?style=flat-square)
+![GitHub release](https://img.shields.io/derLesh/release/RconInvite/rubidium.svg?style=flat-square)
+![GitHub last commit](https://img.shields.io/derLesh/last-commit/RconInvite/skia.svg?style=flat-square)
+
+![GitHub top language](https://img.shields.io/derLesh/languages/top/badges/RconInvite.svg?style=flat-square)
+
+
 # Setup
 1. **Download newest version of [RconInvite]()** - Save the jar in any folder on your computer or your server. It's **recommend** to run this jar on a linux computer. On windows you have to create a start.bat and launch the bot. **NOTE:** The first time you start the jar it will close automaticly after creating all files.
 
