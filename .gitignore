@@ -7,3 +7,4 @@ config.json
 
 config.json
 *.json
+node_modules/

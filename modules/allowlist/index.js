@@ -1,6 +1,6 @@
 module.exports = {
-    name: 'ban',
-    flags: [],
+    name: 'whitelist',
+    flags: ['options'],
     args: [
       { name: "username", description: "Username of the player to be banned", required: true },
       { name: "reason", description: "Reason for the ban", required: false }
@@ -50,8 +50,6 @@ module.exports = {
       } finally {
         await rcon.end();
       }
-
-      console.log(">>>>>> Answer: ", answer)
 
       return answer;
     })

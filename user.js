@@ -1,3 +1,6 @@
+const path = require('path');
+const fs = require('fs');
+
 const fileName = path.join(__dirname, 'users.json');
 let userlist = [];
 
@@ -6,7 +9,7 @@ function loadUserList() {
     const data = fs.readFileSync(fileName);
     return JSON.parse(data);
   } catch (error) {
-    logger.error(error);
+    console.error(error);
     return [];
   }
 }
@@ -15,7 +18,7 @@ function saveUserList() {
   try {
     fs.writeFileSync(fileName, JSON.stringify(userlist, null, 2));
   } catch (error) {
-    logger.error(error);
+    console.error(error);
   }
 }
 
