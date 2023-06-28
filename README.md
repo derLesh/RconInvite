@@ -1,26 +1,25 @@
 # RconInvite
-Add and remove users to your Minecraft whitelist from your discord server
+Basic Minecraft Admin Control by using a Discord Bot
 
-![Github All Releases](https://img.shields.io/derLesh/downloads/RconInvite/RconInvite/total.svg?style=flat-square)
-![GitHub release](https://img.shields.io/derLesh/release/RconInvite/rubidium.svg?style=flat-square)
-![GitHub last commit](https://img.shields.io/derLesh/last-commit/RconInvite/skia.svg?style=flat-square)
+## Overview
 
-![GitHub top language](https://img.shields.io/derLesh/languages/top/badges/RconInvite.svg?style=flat-square)
+Available Command:
+    - /ban <player> <reason (optional)>
+    - /unban <player>
+    - /kick <player> <reason (optional)>
+    - /whitelist <add/remove> <player>
+    - /op <player>
 
+### Installation
+Prerequisites: [Node.js](https://nodejs.org) and [npm](https://www.npmjs.com/get-npm) (which comes with Node.js) installed.
 
-# Setup
-1. **Download newest version of [RconInvite]()** - Save the jar in any folder on your computer or your server. It's **recommend** to run this jar on a linux computer. On windows you have to create a start.bat and launch the bot. **NOTE:** The first time you start the jar it will close automaticly after creating all files.
+1. Clone the repository
+2. Run `npm install` to install all required dependencies
+3. Run `npm start` to start the bot and initialize the config file
+4. Edit **config.json** and the necessary values
+    - **mc_ip** - Your Minecraft Server IP
+    - **rcon_pw** - Your Minecraft Server RCON Password
+    - **rcon_port** - Your Minecraft Server RCON Port
+    - **bot_token** - Your Discord Bot Token (Get it [here](https://discordapp.com/developers/applications/me))
+5. Run `npm start` again to start the bot
 
-2. **Before you restart the bot again** - Get your Discord Bot Token [here](https://discordapp.com/developers/applications/me) and insert it into `token` @ config.json. Running the Bot requires your servers IP, RCON Port and RCON Password. Get them from your server and fill it into `hostIp`, `rconPort` and `rconPw`. Save the file.
-
-3. **Start your bot** - The Bot is ready to use. Launch it and try it yourself. Use `/addme <MC-User>` to add an user to the whitelist and `remove <MC-User>` to remove an user from the whitelist
-
-# Librarys
-- [JDA-3.5](https://github.com/DV8FromTheWorld/JDA) 
-- [gson-2.8.2](https://github.com/google/gson) 
-- [rkon-1.1.2](https://github.com/Kronos666/rkon-core) 
-- [MoreColors-1.0](https://github.com/LeshDev/MoreColors) 
-
-# Download
-Latest stable version: [GitHub Stable Release](https://github.com/LeshDev/RconInvite/releases/latest)
-All versions: [All GitHub Releases](https://github.com/LeshDev/RconInvite/releases)
